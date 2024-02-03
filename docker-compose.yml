@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  web-app:
+    image: omnichem/omnichem_backend-app:1.0.7
+
+    container_name: test-app-OC
+    command: ./entrypoint.sh
+    volumes:
+      - ./products:/home/app/products
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
